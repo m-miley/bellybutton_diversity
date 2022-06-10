@@ -57,31 +57,51 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
-    // 3. Create a variable that holds the samples array. 
-    
-    // 4. Create a variable that filters the samples for the object with the desired sample number.
 
-    //  5. Create a variable that holds the first sample in the array.
-
-
-    // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-
-
-    // 7. Create the yticks for the bar chart.
-    // Hint: Get the the top 10 otu_ids and map them in descending order  
-    //  so the otu_ids with the most bacteria are last. 
-
-    var yticks = 
-
-    // 8. Create the trace for the bar chart. 
-    var barData = [
+      // 3. Create a variable that holds the samples array. 
+      let samples = data.samples;
       
-    ];
-    // 9. Create the layout for the bar chart. 
-    var barLayout = {
-     
-    };
+      // 4. Create a variable that filters the samples for the object with the desired sample number.
+      let filteredSamples = samples.filter(obj => obj.id == sample);
+
+      //  5. Create a variable that holds the first sample in the array.
+      let theSample = filteredSamples[0];
+      
+      console.log(theSample);
+
+      // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+      let otuIds = theSample.otu_ids.slice(0,10).reverse();
+      otuIds = otuIds.map(id => 'OTU ' + id);
+      let otuLabels = theSample.otu_labels.slice(0,10).reverse();
+      let sampleValues = theSample.sample_values.slice(0,10).reverse();
+      console.log(`labels: ${otuLabels}`);
+      console.log(`ids: ${otuIds}`);
+      console.log(`sample values: ${sampleValues}`);
+      
+      // 7. Create the yticks for the bar chart.
+      // Hint: Get the the top 10 otu_ids and map them in descending order  
+      //  so the otu_ids with the most bacteria are last. 
+      let yticks = otuIds
+      // 8. Create the trace for the bar chart. 
+      var barData = [{
+          x: sampleValues,
+          y: yticks,
+          type: 'bar',
+          orientation: 'h',
+          text: otuLabels           
+      }];
+
+  // //   9. Create the layout for the bar chart. 
+      var barLayout = {
+          title: "Top 10 Bacteria Cultures Identified",
+          margin: {
+              l: 100,
+              r: 100,
+              t: 100,
+              b: 30
+          }
+      };
     // 10. Use Plotly to plot the data with the layout. 
-    
+      Plotly.newPlot("bar", barData, barLayout);
   });
 }
