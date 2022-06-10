@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    margin-bottom: 150px;
 }
 .jumbotron#one {
     background-image: url("../images/bellybutton.jpeg");
@@ -26,7 +27,7 @@ body {
 }
 #bubble {
     margin-top: 25px;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
 } 
 #test, #selDataset {
     margin-top: 1px;
