@@ -47,7 +47,7 @@ function buildMetadata(sample) {
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
-      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`).property("id", "paneltxt");
     });
 
   });
@@ -143,8 +143,8 @@ function buildCharts(sample) {
           margin: {
             l: 125,
             r: 125,
-            b: 100,
-            t: 40
+            b: 80,
+            t: 90
           }
       };
     // 10. Use Plotly to plot the data with the layout. 
@@ -176,7 +176,7 @@ function buildCharts(sample) {
       margin: {
         l: 90,
         r: 25,
-        t: 30,
+        t: 70,
         b: 100
       },
       hovermode: 'closest'

@@ -10,25 +10,34 @@
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 
-<!-- <body style="background-color: powderblue;"> -->
 <body>
-  <!-- <img src="bacteria.jpeg"> -->
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center" id="one">
         <h1 style="background-color:white; font-family: Monaco">Belly Button Biodiversity Dashboard</h1><br>
         <p style="background-color:white;">Use the interactive charts below to explore the dataset</p>
       </div>
-    
+    </div>
+    <div class="row">
+      <p id="summary">
+        Rosa, a microbiologist for the startup company Improbable Foods, is seeking to discover a species of
+        bacteria that synthesizes proteins that taste like beef!  After successfully synthesizing meat from other
+        sources like algae,
+        fungi, and plant roots, she's still on the hunt for the perfect taste.  Rosa believes that there just might
+        be the right bacteria for this project hiding out somewhere on a human body.  She has decided to take navel
+        samples from people across the country and assigned them anonymous identification numbers.  This website is
+        a projection of the experimental results run on the samples and may perhaps provide the participants with
+        some interesting insights about their personal microbiome.  Please, explore the data and see what you find!
+      </p>
     </div>
     <div class="row">
       <div class="col-md-2" id="bacteria">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
+        <div class="well" id="well">
+          <h5 id="test">Test Subject ID No.:</h5>
           <!-------------- <select id="selDataset"></select> --------------->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" id="panel">
           <div class="panel-heading">
             <h3 class="panel-title">Demographic Info</h3>
           </div>
