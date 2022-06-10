@@ -89,7 +89,8 @@ function buildCharts(sample) {
           axis: { 
             range: [null, 10],
             tickwidth: 2,
-            tickcolor: 'black'
+            tickcolor: 'black',
+            dtick: 2
           },
           steps: [
             { range: [0, 2], color: "orangered" },
@@ -97,8 +98,7 @@ function buildCharts(sample) {
             { range: [4, 6], color: "green" },
             { range: [6, 8], color: "yellowgreen" },
             { range: [8, 10], color: "gold" }
-          ]
-          
+          ]          
         }
       }];
 
