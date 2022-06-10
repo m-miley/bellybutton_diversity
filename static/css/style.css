@@ -8,7 +8,7 @@ body {
     background-image: url("../images/bellybutton.jpeg");
     background-position: bottom;
     background-size: cover;
-    border-style: groove;
+    border-style: groove;    
 }
 #summary {
     background-color: white;
@@ -26,6 +26,7 @@ body {
 }
 #bubble {
     margin-top: 25px;
+    margin-bottom: 150px;
 } 
 #test, #selDataset {
     margin-top: 1px;
