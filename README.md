@@ -1,4 +1,12 @@
 # bellybutton_diversity
+
+Resources
+
+    - JavaScript, HTML, CSS
+    - Plotly.js
+    - d3.js
+    - JSON data
+    
 This week at bootcamp, using JavaScript, Plotly.js, and D3.js, we created a web page to host an interactive dashboard that displays the data results for participants of a scientific research project.  This project attempts to identify candidate bacteria for a startup company seeking to synthesize proteins that tase like beef!
 
 ## [Visit Web Page](https://m-miley.github.io/bellybutton_diversity/)
